@@ -1,0 +1,15 @@
+<div *ngIf="lType !== 'future'; else futureLogString">
+  <div class="datepicker-container">
+    <ng-datepicker
+      [(ngModel)]="logsDateService.datepickerDates[lType]"
+      (click)="openDatepicker()"
+      (clickOutside)="closeDatepicker()"
+      (ngModelChange)="changeDate($event)"
+      [options]="options"
+      [isOpened]="isOpened"
+      class="logs-datepicker"
+      headless="false"
+    >{{ dateFormatString }}</ng-datepicker>
+  </div>
+</div>
+<ng-template #futureLogString><p class="mb-0">Someday</p></ng-template>

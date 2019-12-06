@@ -1,0 +1,30 @@
+.table-card {
+  width: 352px;
+  min-width: 352px;
+  margin: 0 8px;
+  padding: 16px;
+  height: 100%;
+  flex-grow: 1;
+  float: left;
+  background-color: rgba(0, 0, 0, .25);
+}
+
+.future-log-title {
+  background-color: #3949ab;
+  color: white;
+}
+
+.monthly-log-title {
+  background-color: #546e7a;
+  color: white;
+}
+
+.weekly-log-title {
+  background-color: #3F729B;
+  color: white;
+}
+
+.daily-log-title {
+  background-color: #757575;
+  color: white;
+}

@@ -1,0 +1,35 @@
+<mdb-card>
+  <mdb-card-body>
+    <mdb-icon
+      (click)="closeNewTaskForm()"
+      class="edit-task-close-icon"
+      icon="times"
+      fas
+    ></mdb-icon>
+    <div [className]="'status-line mark-' + task.mark"></div>
+    <div class="md-form">
+      <textarea
+        [(ngModel)]="task.content"
+        class="md-textarea form-control"
+        rows="4"
+        id="input_text"
+        type="text"
+        mdbInput
+      ></textarea>
+      <label for="input_text">New task</label>
+    </div>
+  </mdb-card-body>
+  <div class="btn-group mb-2" role="group">
+    <button
+      (click)="createNewTask.emit(task)"
+      [disabled]="!task.content.trim()"
+      class="waves-light"
+      type="button"
+      color="primary"
+      size="sm"
+      mdbBtn
+      mdbWavesEffect
+    >create</button>
+    <app-mark-task-btn (markTask)="markTask($event)"></app-mark-task-btn>
+  </div>
+</mdb-card>

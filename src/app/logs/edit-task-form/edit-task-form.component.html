@@ -1,0 +1,113 @@
+<mdb-card class="mb-2">
+  <mdb-card-body>
+    <mdb-icon
+      (click)="closeEditTaskForm()"
+      class="edit-task-close-icon"
+      icon="times"
+      fas
+    ></mdb-icon>
+    <div [className]="'status-line mark-' + editableTask.mark"></div>
+    <div class="md-form">
+      <textarea
+        [(ngModel)]="editableTask.content"
+        class="md-textarea form-control"
+        rows="4"
+        id="input_text"
+        type="text"
+        mdbInput
+      ></textarea>
+      <label for="input_text">Edit task</label>
+    </div>
+  </mdb-card-body>
+  <div class="btn-group mb-1" role="group">
+    <button
+      *ngIf="!editableTask.isDone"
+      (click)="onDone()"
+      [disabled]="!editableTask.content.trim()"
+      class="waves-light"
+      type="button"
+      size="sm"
+      mdbBtn
+      mdbWavesEffect
+    >done</button>
+    <button
+      *ngIf="editableTask.isDone"
+      (click)="onNotDone()"
+      [disabled]="!editableTask.content.trim()"
+      class="waves-light"
+      type="button"
+      size="sm"
+      mdbWavesEffect
+      mdbBtn
+    >not done</button>
+    <button
+      *ngIf="!editableTask.inProgress"
+      (click)="onInProgress()"
+      [disabled]="!editableTask.content.trim()"
+      class="waves-light ml-0"
+      type="button"
+      size="sm"
+      mdbBtn
+      mdbWavesEffect
+    >in progress</button>
+    <button
+      *ngIf="editableTask.inProgress"
+      (click)="onNotInProgress()"
+      [disabled]="!editableTask.content.trim()"
+      class="waves-light ml-0"
+      type="button"
+      size="sm"
+      mdbBtn
+      mdbWavesEffect
+    >not in progress</button>
+    <div mdbDropdown [dropup]="true">
+      <button
+        [disabled]="!editableTask.content.trim()"
+        class="dropdown-toggle waves-light"
+        type="button"
+        size="sm"
+        mdbBtn
+        mdbDropdownToggle
+        mdbWavesEffect
+      >migrate</button>
+      <div class="dropdown-menu">
+        <a
+          *ngIf="task.lType !== 'future'"
+          (click)="migrateToFutureLog()"
+          class="dropdown-item"
+        >Future Log</a>
+        <a (click)="setTaskToMigrate('monthly')" class="dropdown-item">
+          Monthly Log
+        </a>
+        <a (click)="setTaskToMigrate('weekly')" class="dropdown-item">
+          Weekly Log
+        </a>
+        <a (click)="setTaskToMigrate('daily')" class="dropdown-item">
+          Daily Log
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="btn-group mb-2" role="group">
+    <button
+      (click)="onSave()"
+      [disabled]="!editableTask.content.trim()"
+      class="waves-light"
+      type="button"
+      color="primary"
+      size="sm"
+      mdbBtn
+      mdbWavesEffect
+    >save</button>
+    <button
+      (click)="onDelete()"
+      class="waves-light"
+      type="button"
+      color="deep-orange"
+      size="sm"
+      mdbBtn
+      mdbWavesEffect
+    >delete</button>
+    <app-mark-task-btn (markTask)="markTask($event)"></app-mark-task-btn>
+  </div>
+</mdb-card>

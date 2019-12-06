@@ -1,0 +1,10 @@
+<div class="table">
+  <div class="logs-wrapper">
+    <div *ngFor="let lType of logTypes" class="table-card animated fadeIn">
+      <app-tasks-container [lType]="lType"></app-tasks-container>
+    </div>
+    <app-migrate-datepicker
+      *ngIf="logsDateService.isMigrateDatepickerShown"
+    ></app-migrate-datepicker>
+  </div>
+</div>

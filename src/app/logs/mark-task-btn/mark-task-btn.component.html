@@ -1,0 +1,28 @@
+<div mdbDropdown [dropup]="true">
+  <button
+    class="dropdown-toggle waves-light"
+    type="button"
+    size="sm"
+    mdbBtn
+    mdbDropdownToggle
+    mdbWavesEffect
+  >mark</button>
+  <div class="dropdown-menu">
+    <a (click)="markTask.emit(3)" class="dropdown-item">
+      <mdb-icon class="mr-2 icon-red" icon="circle" far></mdb-icon>
+      High priority
+    </a>
+    <a (click)="markTask.emit(2)" class="dropdown-item">
+      <mdb-icon class="mr-2 icon-orange" icon="circle" far></mdb-icon>
+      Medium priority
+    </a>
+    <a (click)="markTask.emit(1)" class="dropdown-item">
+      <mdb-icon class="mr-2 icon-grey" far icon="circle"></mdb-icon>
+      Low priority
+    </a>
+    <a (click)="markTask.emit(0)" class="dropdown-item">
+      <mdb-icon class="mr-2 icon-transparent" icon="circle" far></mdb-icon>
+      No mark
+    </a>
+  </div>
+</div>

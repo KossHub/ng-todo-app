@@ -1,0 +1,20 @@
+<mdb-card>
+  <mdb-card-body ngClass="{{ lType }}-log-title">
+    <mdb-card-title>
+      <h4>{{ lType | titlecase }} Log</h4>
+    </mdb-card-title>
+    <app-logs-datepicker
+      (changeLogDate)="changeLogDate($event)"
+      [lType]="lType"
+    ></app-logs-datepicker>
+  </mdb-card-body>
+</mdb-card>
+<app-tasks-scrollbar
+  (openNewTaskForm)="openNewTaskForm($event)"
+  (openEditTaskForm)="openEditTaskForm($event)"
+  (createNewTask)="createNewTask($event)"
+  (editTask)="editTask($event)"
+  (removeTask)="removeTask($event)"
+  [tasks]="tasks"
+  [lType]="lType"
+></app-tasks-scrollbar>

@@ -1,0 +1,6 @@
+<div class="bg-img">
+  <app-header></app-header>
+  <app-loader *ngIf="loaderService.requestsInPending | async"></app-loader>
+  <router-outlet></router-outlet>
+  <footer>Axmor 2019</footer>
+</div>

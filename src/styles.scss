@@ -1,0 +1,72 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100%;
+  overflow: hidden;
+}
+
+.ngx-datepicker-container {
+  z-index: 5;
+}
+
+.card-body {
+  padding: 10px 20px;
+}
+
+.task-text {
+  font-size: .9rem;
+  font-weight: 400;
+  color: #5a5d61 !important;
+  white-space: pre-line;
+  margin-bottom: 0 !important;
+}
+
+.status-line {
+  border-left: 4px solid;
+  margin-left: -10px;
+  position: absolute;
+  width: 1px;
+  height: 40%;
+  min-height: 20px;
+  max-height: 60px;
+}
+
+.mark-1 {
+  border-color: #bbb;
+}
+.mark-2 {
+  border-color: orange;
+}
+.mark-3 {
+  border-color: red;
+}
+.mark-0 {
+  border-color: transparent;
+}
+
+.edit-task-close-icon {
+  float: right;
+  padding: 6px;
+  margin: -6px -6px 0 0;
+  color: #607d8b;
+  cursor: pointer;
+  position: relative;
+  z-index: 4;
+
+  &:hover {
+    color: tomato;
+  }
+}
+
+.md-form {
+  margin: 8px 0px;
+
+  .md-textarea {
+    padding: 0;
+  }
+}

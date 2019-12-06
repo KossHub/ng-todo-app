@@ -1,0 +1,54 @@
+.table {
+  height: calc(100% - 84px);
+  margin-bottom: 0 !important;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.logs-wrapper {
+  display: flex;
+  margin: 0 auto;
+  width: 1520px;
+  padding: 12px 24px 0 24px;
+}
+
+.table-card {
+  width: 352px;
+  min-width: 352px;
+  margin: 0 8px;
+  padding: 16px;
+  height: 100%;
+  flex-grow: 1;
+  float: left;
+  background-color: rgba(0, 0, 0, .25);
+}
+
+.card-body {
+  padding: 10px 20px !important;
+}
+
+.card-title {
+  h4  {
+    margin-bottom: 2px !important;
+  }
+}
+
+.future-log-title {
+  background-color: #3949ab;
+  color: white;
+}
+
+.monthly-log-title {
+  background-color: #546e7a;
+  color: white;
+}
+
+.weekly-log-title {
+  background-color: #3F729B;
+  color: white;
+}
+
+.daily-log-title {
+  background-color: #757575;
+  color: white;
+}

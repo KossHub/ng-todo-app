@@ -1,0 +1,20 @@
+<mdb-card class="task-card mb-2">
+  <mdb-card-body>
+    <div [className]="'status-line mark-' + task.mark"></div>
+    <div class="task-text" [ngClass]="{'line-through': task.isDone}">
+      <mdb-icon
+        *ngIf="task.isDone"
+        icon="check-circle mr-1"
+        size="lg"
+        fas
+      ></mdb-icon>
+      <mdb-icon
+        *ngIf="task.inProgress"
+        icon="hourglass-half mr-1"
+        size="lg"
+        fas
+      ></mdb-icon>
+      {{ task.content }}
+    </div>
+  </mdb-card-body>
+</mdb-card>

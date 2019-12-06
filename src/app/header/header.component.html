@@ -1,0 +1,18 @@
+<div class="header animated fadeInDown">
+  <!-- Logo -->
+  <h3 class="app-name"><b>J</b>b</h3>
+  <!-- Buttons -->
+  <div>
+    <button
+      *ngFor="let b of buttons"
+      (click)="btnClick(b)"
+      [color]="b === router.url.substr(1) ? 'white' : 'grey'"
+      type="button"
+      outline="true"
+      mdbBtn
+      mdbWavesEffect
+    >{{ b }}</button>
+  </div>
+  <!-- Current date and time -->
+  <h5 class="the-time">{{ theTime | moment:'MMM Do YYYY, h:mm:ss a' }}</h5>
+</div>

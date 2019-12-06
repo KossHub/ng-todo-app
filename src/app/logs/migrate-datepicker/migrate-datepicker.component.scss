@@ -1,0 +1,17 @@
+.dp-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 150px;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: center;
+}
+
+.migrate-dp {
+  position: relative;
+  left: -155px;
+}

@@ -1,0 +1,11 @@
+<div class="dp-wrapper" (click)="closeMigrateDatepicker()">
+  <ng-datepicker
+    [(ngModel)]="date"
+    (ngModelChange)="onSelectDate($event)"
+    [options]="options"
+    [isOpened]="true"
+    class="migrate-dp"
+    headless="false"
+    click-stop-propagation
+  ></ng-datepicker>
+</div>
