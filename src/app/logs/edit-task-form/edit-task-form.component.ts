@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { ITask, LogsTasksService } from 'src/app/shared/services/logs/tasks.service';
+import { ITask, LogsTasksService, TaskMarksEnum } from 'src/app/shared/services/logs/tasks.service';
 import { LogsDateService } from 'src/app/shared/services/logs/date.service';
 
 @Component({
@@ -12,6 +12,7 @@ export class EditTaskFormComponent implements OnInit {
   editableTask: ITask;
 
   @Input() task: ITask;
+
   @Output() editTask: EventEmitter<ITask> = new EventEmitter();
   @Output() removeTask: EventEmitter<ITask> = new EventEmitter();
   @Output() migrateTaskToFutureLog: EventEmitter<null> = new EventEmitter();
@@ -39,7 +40,7 @@ export class EditTaskFormComponent implements OnInit {
     this.logsTasksService.setActiveEditTaskForm();
   }
 
-  markTask(mark): void {
+  markTask(mark: TaskMarksEnum): void {
     this.editableTask.mark = mark;
   }
 
@@ -73,7 +74,7 @@ export class EditTaskFormComponent implements OnInit {
     this.closeEditTaskForm()
   }
 
-  onMigrateTaskToFutureLog() {
+  onMigrateTaskToFutureLog(): void {
     this.logsTasksService.setTaskToMigrate(this.editableTask, 'future');
     this.migrateTaskToFutureLog.emit();
     this.closeEditTaskForm()

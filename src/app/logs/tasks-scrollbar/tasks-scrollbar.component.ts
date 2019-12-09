@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { LogsDateService } from 'src/app/shared/services/logs/date.service';
 import { LogsTasksService, ITask } from 'src/app/shared/services/logs/tasks.service';
@@ -8,9 +8,10 @@ import { LogsTasksService, ITask } from 'src/app/shared/services/logs/tasks.serv
   templateUrl: './tasks-scrollbar.component.html',
   styleUrls: ['./tasks-scrollbar.component.scss']
 })
-export class TasksScrollbarComponent implements OnInit {
+export class TasksScrollbarComponent {
   @Input() tasks: ITask[];
   @Input() lType: string;
+
   @Output() openNewTaskForm: EventEmitter<null> = new EventEmitter();
   @Output() openEditTaskForm: EventEmitter<string> = new EventEmitter();
   @Output() createNewTask: EventEmitter<ITask> = new EventEmitter();
@@ -22,7 +23,4 @@ export class TasksScrollbarComponent implements OnInit {
     public logsDateService: LogsDateService,
     public logsTasksService: LogsTasksService
   ) {}
-
-  ngOnInit() {
-  }
 }

@@ -18,6 +18,7 @@ export class NewTaskFormComponent implements OnInit, AfterViewInit {
   };
 
   @Input() lType: string;
+
   @Output() createNewTask: EventEmitter<any> = new EventEmitter;
 
   constructor(

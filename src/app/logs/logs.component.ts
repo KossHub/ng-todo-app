@@ -23,16 +23,15 @@ export class LogsComponent implements OnInit {
     public loaderService: LoaderService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.tasks = {};
     this.logTypes.forEach((lType) => this.tasks[lType] = []);
-
     for (let log in this.tasks) {
       this.getTasks(log);
     }
   }
 
-  changeLogDate(date: Date, lType: string) {
+  changeLogDate(date: Date, lType: string): void {
     this.logsDateService.changeDate(date, lType);
     this.getTasks(lType);
   }
@@ -97,7 +96,7 @@ export class LogsComponent implements OnInit {
     );
   }
 
-  migrateTaskToFutureLog() {
+  migrateTaskToFutureLog(): void {
     this.migrateTask('no date');
   }
 

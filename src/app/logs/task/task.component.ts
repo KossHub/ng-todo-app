@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ITask } from '../../shared/services/logs/tasks.service';
 
 @Component({
@@ -6,11 +6,6 @@ import { ITask } from '../../shared/services/logs/tasks.service';
   templateUrl: './task.component.html',
   styleUrls: ['./task.component.scss']
 })
-export class TaskComponent implements OnInit {
+export class TaskComponent {
   @Input() task: ITask;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 }

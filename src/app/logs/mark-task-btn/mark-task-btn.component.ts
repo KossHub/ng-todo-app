@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 import { TaskMarksEnum } from 'src/app/shared/services/logs/tasks.service';
 
@@ -7,11 +7,6 @@ import { TaskMarksEnum } from 'src/app/shared/services/logs/tasks.service';
   templateUrl: './mark-task-btn.component.html',
   styleUrls: ['./mark-task-btn.component.scss']
 })
-export class MarkTaskBtnComponent implements OnInit {
+export class MarkTaskBtnComponent {
   @Output() markTask: EventEmitter<TaskMarksEnum> = new EventEmitter();
-
-  constructor() {}
-
-  ngOnInit() {
-  }
 }

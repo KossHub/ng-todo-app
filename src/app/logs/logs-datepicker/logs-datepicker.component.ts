@@ -13,12 +13,11 @@ import { LogsTasksService } from 'src/app/shared/services/logs/tasks.service';
 export class LogsDatepickerComponent implements OnInit {
   dateFormatString: string = '';
   isOpened: boolean = false;
-  options: DatepickerOptions = {
-    firstCalendarDay: 1
-  };
+  options: DatepickerOptions =  { firstCalendarDay: 1 };
 
   @Input() lType: string;
-  @Output() changeLogDate: EventEmitter<any> = new EventEmitter();
+
+  @Output() changeLogDate: EventEmitter<Date> = new EventEmitter();
 
   constructor(
     public logsDateService: LogsDateService,
@@ -34,7 +33,7 @@ export class LogsDatepickerComponent implements OnInit {
     this.setDateFormat();
   }
 
-  setDateFormat() {
+  setDateFormat(): void {
     const currentDate = moment(
       this.logsDateService.datepickerDates[this.lType]
     );

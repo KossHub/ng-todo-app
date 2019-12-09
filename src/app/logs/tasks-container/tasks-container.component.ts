@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnDestroy, Output, EventEmitter } from '@angular/core';
 
 import { LogsDateService } from 'src/app/shared/services/logs/date.service';
 import { LogsTasksService, ITask } from 'src/app/shared/services/logs/tasks.service';
@@ -9,7 +9,7 @@ import { LoaderService } from 'src/app/shared/services/loader.service';
   templateUrl: './tasks-container.component.html',
   styleUrls: ['./tasks-container.component.scss']
 })
-export class TasksContainerComponent implements OnInit, OnDestroy {
+export class TasksContainerComponent implements OnDestroy {
   @Input() tasks: ITask[];
   @Input() lType: string;
 
@@ -24,9 +24,6 @@ export class TasksContainerComponent implements OnInit, OnDestroy {
     public logsTasksService: LogsTasksService,
     public loaderService: LoaderService
   ) {}
-
-  ngOnInit() {
-  }
 
   ngOnDestroy(): void {
     this.closeNewTaskForm();

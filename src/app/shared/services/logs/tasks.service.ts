@@ -56,7 +56,7 @@ export class LogsTasksService {
       }));
   }
 
-  editTask(task: ITask) {
+  editTask(task: ITask): Observable<ITask> {
     const { lType, date, id } = task;
     const url = `${LogsTasksService.baseUrl}/${lType}/${date}/${id}.json`;
     return this.http.put<ITask>(url, task);
