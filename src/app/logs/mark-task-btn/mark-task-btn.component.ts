@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
 import { TaskMarksEnum } from 'src/app/shared/services/logs/tasks.service';
 
 @Component({

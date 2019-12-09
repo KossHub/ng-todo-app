@@ -1,7 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DatepickerOptions } from 'ng2-datepicker';
 import * as moment from 'moment';
-import { LogsDateService } from '../../shared/services/logs/date.service';
+
+import { LogsDateService } from 'src/app/shared/services/logs/date.service';
 import { LogsTasksService } from 'src/app/shared/services/logs/tasks.service';
 
 @Component({

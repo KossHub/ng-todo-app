@@ -4,7 +4,7 @@
       <h4>{{ lType | titlecase }} Log</h4>
     </mdb-card-title>
     <app-logs-datepicker
-      (changeLogDate)="changeLogDate($event)"
+      (changeLogDate)="changeLogDate.emit($event, lType)"
       [lType]="lType"
     ></app-logs-datepicker>
   </mdb-card-body>
@@ -12,9 +12,10 @@
 <app-tasks-scrollbar
   (openNewTaskForm)="openNewTaskForm($event)"
   (openEditTaskForm)="openEditTaskForm($event)"
-  (createNewTask)="createNewTask($event)"
-  (editTask)="editTask($event)"
-  (removeTask)="removeTask($event)"
+  (createNewTask)="onCreateNewTask($event)"
+  (editTask)="editTask.emit($event)"
+  (removeTask)="removeTask.emit($event)"
+  (migrateTaskToFutureLog)="migrateTaskToFutureLog.emit()"
   [tasks]="tasks"
   [lType]="lType"
 ></app-tasks-scrollbar>

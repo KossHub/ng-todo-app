@@ -9,6 +9,7 @@
       *ngIf="logsTasksService.activeEditTaskForm === task.id"
       (editTask)="editTask.emit($event)"
       (removeTask)="removeTask.emit($event)"
+      (migrateTaskToFutureLog)="migrateTaskToFutureLog.emit()"
       [task]="task"
     ></app-edit-task-form>
   </div>

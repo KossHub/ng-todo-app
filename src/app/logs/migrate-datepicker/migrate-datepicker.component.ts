@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { DatepickerOptions } from 'ng2-datepicker';
 import * as moment from 'moment';
+
 import { LogsDateService } from 'src/app/shared/services/logs/date.service';
 import { LogsTasksService } from 'src/app/shared/services/logs/tasks.service';
 
@@ -12,6 +13,8 @@ import { LogsTasksService } from 'src/app/shared/services/logs/tasks.service';
 export class MigrateDatepickerComponent {
   date = new Date();
   options: DatepickerOptions = { firstCalendarDay: 1 };
+
+  @Output() migrateTask: EventEmitter<string> = new EventEmitter();
 
   constructor(
     public logsDateService: LogsDateService,
@@ -33,7 +36,7 @@ export class MigrateDatepickerComponent {
   }
 
   onSelectDate(): void {
-    this.logsTasksService.migrateTask(this.defineLogDate(this.date));
+    this.migrateTask.emit(this.defineLogDate(this.date));
     this.closeMigrateDatepicker();
   }
 

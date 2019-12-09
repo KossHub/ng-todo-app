@@ -5,7 +5,12 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NgDatepickerModule } from 'ng2-datepicker';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { AppRoutingModule } from './app-routing.module';
-import { PerfectScrollbarModule, PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import {
+  PerfectScrollbarModule,
+  PERFECT_SCROLLBAR_CONFIG,
+  PerfectScrollbarConfigInterface
+} from 'ngx-perfect-scrollbar';
+
 import { MomentPipe } from './shared/pipes/moment.pipe';
 import { ClickStopPropagation } from './shared/directives/click-stop-propagation.directive';
 import { AppComponent } from './app.component';

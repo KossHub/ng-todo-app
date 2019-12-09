@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 import { ITask, LogsTasksService } from 'src/app/shared/services/logs/tasks.service';
 import { LogsDateService } from 'src/app/shared/services/logs/date.service';
 
@@ -13,6 +14,7 @@ export class EditTaskFormComponent implements OnInit {
   @Input() task: ITask;
   @Output() editTask: EventEmitter<ITask> = new EventEmitter();
   @Output() removeTask: EventEmitter<ITask> = new EventEmitter();
+  @Output() migrateTaskToFutureLog: EventEmitter<null> = new EventEmitter();
 
   constructor(
     public logsDateService: LogsDateService,
@@ -30,6 +32,7 @@ export class EditTaskFormComponent implements OnInit {
 
   onDelete(): void {
     this.removeTask.emit(this.editableTask);
+    this.closeEditTaskForm();
   }
 
   closeEditTaskForm(): void {
@@ -70,9 +73,9 @@ export class EditTaskFormComponent implements OnInit {
     this.closeEditTaskForm()
   }
 
-  migrateToFutureLog() {
+  onMigrateTaskToFutureLog() {
     this.logsTasksService.setTaskToMigrate(this.editableTask, 'future');
-    this.logsTasksService.migrateTask('no date');
+    this.migrateTaskToFutureLog.emit();
     this.closeEditTaskForm()
   }
 }

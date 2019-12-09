@@ -11,11 +11,12 @@ import { LogsTasksService, ITask } from 'src/app/shared/services/logs/tasks.serv
 export class TasksScrollbarComponent implements OnInit {
   @Input() tasks: ITask[];
   @Input() lType: string;
-  @Output() openNewTaskForm: EventEmitter<any> = new EventEmitter();
-  @Output() openEditTaskForm: EventEmitter<any> = new EventEmitter();
-  @Output() createNewTask: EventEmitter<any> = new EventEmitter();
-  @Output() editTask: EventEmitter<any> = new EventEmitter();
-  @Output() removeTask: EventEmitter<any> = new EventEmitter();
+  @Output() openNewTaskForm: EventEmitter<null> = new EventEmitter();
+  @Output() openEditTaskForm: EventEmitter<string> = new EventEmitter();
+  @Output() createNewTask: EventEmitter<ITask> = new EventEmitter();
+  @Output() editTask: EventEmitter<ITask> = new EventEmitter();
+  @Output() removeTask: EventEmitter<ITask> = new EventEmitter();
+  @Output() migrateTaskToFutureLog: EventEmitter<null> = new EventEmitter();
 
   constructor(
     public logsDateService: LogsDateService,

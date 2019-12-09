@@ -73,7 +73,7 @@
       <div class="dropdown-menu">
         <a
           *ngIf="task.lType !== 'future'"
-          (click)="migrateToFutureLog()"
+          (click)="onMigrateTaskToFutureLog()"
           class="dropdown-item"
         >Future Log</a>
         <a (click)="setTaskToMigrate('monthly')" class="dropdown-item">

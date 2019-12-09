@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -80,21 +80,5 @@ export class LogsTasksService {
   setTaskToMigrate(task: ITask, newLogType: string): void {
     this.taskToMigrate = task;
     this.migrateTo = newLogType;
-  }
-
-  migrateTask(date: string): void {
-    this.removeTask(this.taskToMigrate).subscribe(
-      () => {
-        const migratedTask = {
-          ...this.taskToMigrate,
-          date,
-          lType: this.migrateTo
-        };
-        this.createTask(migratedTask).subscribe((task) => {
-          /** MIGRATE DONE => UPDATE TASKS */
-        });
-      },
-      (error) => console.error('ERR:', error)
-    );
   }
 }
